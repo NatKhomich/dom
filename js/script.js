@@ -14,3 +14,5 @@ console.log(bodyElement.hasChildNodes());
 //
 const bodyChildren = bodyElement.children;
 console.log(bodyChildren);
+
+
