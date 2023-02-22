@@ -21,7 +21,9 @@ const ul = `
 `;
 //поместить ul в div
 div.innerHTML = ul;
+
 //==================================================================
+
 //создать изображение
 const img = document.createElement('img');
 //добавить атрибут source
@@ -34,7 +36,7 @@ img.classList.add('super');
 img.alt = "Super Man";
 //поместить изображение внутрь div
 div.append(img);
-//используя HTML строку, сщздать div с классом pDiv с 2-мя параграфами
+//используя HTML строку, создать div с классом pDiv с 2-мя параграфами
 const elemHTML = `
     <div class = 'pDiv'>
         <p>Параграф 1</p>
@@ -48,7 +50,9 @@ const pDiv = document.querySelector('.pDiv');
 pDiv.children[1].classList.add('text');
 //удалить первый параграф
 pDiv.firstElementChild.remove();
+
 //====================================================================
+
 //создать функцию generateAutoCard, кот принимает 3 аргумента: brand, color, year
 const generateAutoCard = (brand, color, year) => {
     const curDate = new Date();
@@ -56,15 +60,12 @@ const generateAutoCard = (brand, color, year) => {
     return `
     <div class = 'autoCard'>
         <h2>${brand.toUpperCase()} ${year}</h2>
-        <p>Автомобиль ${brand.toUpperCase()} - ${year} года. Возраст авто - ${curYear-year} лет.</p>
+        <p>Автомобиль ${brand.toUpperCase()} - ${year} года. Возраст авто - ${curYear - year} лет.</p>
         <p>Цвет: ${color}</p>
         <button type="button" class ="btn">Удалить</button>
     </div>
     `;
 }
-
-
-
 //создать новый div с классом autos
 const carsDiv = document.createElement('div');
 carsDiv.classList.add('autos');
@@ -82,30 +83,23 @@ const carsHTML = carsList.map(car => {
 //поместить эти 3 карточки внутрь div class = 'autos'
 carsDiv.innerHTML = carsHTML;
 //поместить div class = 'autos' на страницу DOM до div class = 'wrapper'
-div.insertAdjacentElement('beforebegin',carsDiv);
+div.insertAdjacentElement('beforebegin', carsDiv);
 
-console.log(carsDiv)
-
-//при клике на кнопку - удалять карточку из структуры DOM
+//при клике на кнопку - удалять карточку из структуры DOM:
 
 //1. выбрать все кнопки
 const buttons = document.querySelectorAll('.btn')
+
 //2. создать функцию удаления
 function handleClick(e) {
     const currentButton = e.currentTarget;
     currentButton.closest('.autoCard').remove();
-   // console.log(currentButton.parentElement)
-
 }
+
 //3. использовать цикл чтобы повесить обработчик события на каждую кнопку
 buttons.forEach(button => {
     button.addEventListener('click', handleClick)
 })
-
-
-
-
-
 
 
 

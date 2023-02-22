@@ -1,7 +1,41 @@
 
 /*---------------------------------------*/
 body {
+  margin: 0 auto;
   font-size: 17px;
   background-color: hotpink;
 }
-
+.autoCard {
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+}
+.autos {
+  display: flex;
+  justify-content: space-around;
+}
+h1{
+  text-align: center;
+  color: white;
+}
+.pDiv {
+  font-size: 20px;
+  padding-left: 30px;
+}
+button {
+  width: 100px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+button:hover{
+  background-color: hotpink;
+  border: none;
+  color: black;
+}
+button:active{
+  background-color: deeppink;
+  border: none;
+}
