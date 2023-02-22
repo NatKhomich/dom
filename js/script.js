@@ -49,10 +49,58 @@ pDiv.children[1].classList.add('text');
 //удалить первый параграф
 pDiv.firstElementChild.remove();
 //====================================================================
+//создать функцию generateAutoCard, кот принимает 3 аргумента: brand, color, year
+const generateAutoCard = (brand, color, year) => {
+    const curDate = new Date();
+    const curYear = curDate.getFullYear();
+    return `
+    <div class = 'autoCard'>
+        <h2>${brand.toUpperCase()} ${year}</h2>
+        <p>Автомобиль ${brand.toUpperCase()} - ${year} года. Возраст авто - ${curYear-year} лет.</p>
+        <p>Цвет: ${color}</p>
+        <button type="button" class ="btn">Удалить</button>
+    </div>
+    `;
+}
 
 
 
+//создать новый div с классом autos
+const carsDiv = document.createElement('div');
+carsDiv.classList.add('autos');
+//создать 3 карточки авто, используя функцию generateAutoCard
+const carsList = [
+    {brand: 'Tesla', year: 2015, color: 'Красный'},
+    {brand: 'Lexus', year: 2016, color: 'Серебристый'},
+    {brand: 'Nissan', year: 2012, color: 'Черный'},
+]
 
+const carsHTML = carsList.map(car => {
+    return generateAutoCard(car.brand, car.color, car.year);
+}).join('');
+
+//поместить эти 3 карточки внутрь div class = 'autos'
+carsDiv.innerHTML = carsHTML;
+//поместить div class = 'autos' на страницу DOM до div class = 'wrapper'
+div.insertAdjacentElement('beforebegin',carsDiv);
+
+console.log(carsDiv)
+
+//при клике на кнопку - удалять карточку из структуры DOM
+
+//1. выбрать все кнопки
+const buttons = document.querySelectorAll('.btn')
+//2. создать функцию удаления
+function handleClick(e) {
+    const currentButton = e.currentTarget;
+    currentButton.closest('.autoCard').remove();
+   // console.log(currentButton.parentElement)
+
+}
+//3. использовать цикл чтобы повесить обработчик события на каждую кнопку
+buttons.forEach(button => {
+    button.addEventListener('click', handleClick)
+})
 
 
 
