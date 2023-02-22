@@ -1,37 +1,28 @@
-//поиск по селектору класса
-const oneElems = document.querySelectorAll(".lorem");
-console.log(oneElems);
-//создание эл-та
-const newElement = document.createElement("div");
-console.log(newElement);
-newElement.innerHTML = "Привет";
-//вставить эл
-const textElems = document.querySelector(".lorem"); //получ эл-т
-const newElementMy = document.createElement("div"); //созд новый эл
-newElementMy.innerHTML = "Новый элемент"; //наполняем эл
-textElems.before(newElementMy);
-//style
-const myElement = document.querySelector(".list");
-myElement.style.color = "blue";
-myElement.style.marginLeft = "40px";
-//перезапись стилей
-const myEl = document.querySelector(".lorem");
-myEl.style.cssText = `
-margin-top: 30px;
-margin-bottom: 30px;
-color: red;
+//создать div
+const div = document.createElement('div');
+//добавить класс wrapper
+div.classList.add('wrapper');
+//поместить его в тег body
+const tagBody = document.body//получаем body
+tagBody.appendChild(div);
+console.log(tagBody)
+//создать заголовок h1 с текстом "DOM (Document Object Model)"
+const header = document.createElement('h1');
+header.textContent = 'DOM (Document Object Model)';
+//добавить h1 перед div с классом wrapper
+div.insertAdjacentElement('beforebegin', header);
+//создать список <ul></ul> и доб в него 3 <li></li> с текстом 1, 2, 3
+const ul = `
+    <ul>
+        <li>один</li>
+        <li>два</li>
+        <li>три</li>
+    </ul>
 `;
-//получение коллекции форм
-const forms = document.forms;
-console.log(document.forms);
-//вывести 'клик' в консоль
-const button = document.querySelector('.button__form');
-function showConsole() {
-    console.log('Клик');
-}
-button.addEventListener('click', showConsole);
-//
-const buttonButton = document.querySelectorAll(".button__form")
+
+
+
+
 
 
 

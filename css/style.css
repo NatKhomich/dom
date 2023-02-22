@@ -3,25 +3,3 @@
 body {
   font-size: 17px;
 }
-h1 {
-  color: teal;
-  text-decoration: underline;
-  margin: 20px;
-}
-.list {
-  padding: 5px 0px 5px 10px;
-}
-form {
-  padding: 20px;
-}
-.button__form {
-  width: 140px;
-  height: 30px;
-  margin-top: 20px;
-}
-.button__form:hover {
-  background-color: coral;
-}
-.button__form:active {
-  background-color: brown;
-}
